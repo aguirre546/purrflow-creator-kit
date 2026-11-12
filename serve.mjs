@@ -1,0 +1,4 @@
+import http from 'node:http';import {readFile} from 'node:fs/promises';import path from 'node:path';import {fileURLToPath} from 'node:url';
+const root=path.join(path.dirname(fileURLToPath(import.meta.url)),'dist');
+const types={'.html':'text/html;charset=utf-8','.mjs':'text/javascript;charset=utf-8','.css':'text/css;charset=utf-8','.png':'image/png','.mp4':'video/mp4'};
+http.createServer(async(req,res)=>{try{const url=new URL(req.url,'http://127.0.0.1'),p=decodeURIComponent(url.pathname),target=path.resolve(root,'.'+(p==='/'?'/index.html':p));if(!target.startsWith(root+path.sep))throw Error();const data=await readFile(target);res.writeHead(200,{'Content-Type':types[path.extname(target)]||'application/octet-stream','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(data);}catch{res.writeHead(404);res.end('Not found');}}).listen(4328,'127.0.0.1',()=>console.log('PurrFlow Creator Kit: http://127.0.0.1:4328'));
