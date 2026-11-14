@@ -71,3 +71,8 @@ For a static host, publish **`dist/`** as the site root. No build command is req
 The official submission page and schedule were rechecked live by the coordinating agent on November 12, 2026. Recorded requirements include solo eligibility within teams of 1–4, one bucket, a judge-accessible GitHub repository, submission by **7:00 PM PHT November 12**, and a **three-minute live demo** with the demo session beginning **7:15 PM**. No percentage-weighted rubric or predicted score is claimed. Recheck subsequent organizer announcements before submission. See [ManilaHack](https://www.manilahack.com/), [scores](https://www.manilahack.com/scores/) and [submission](https://www.manilahack.com/scores/submission/).
 
 See `SUBMISSION_DRAFT.md`, `DEMO_SCRIPT.md` and `CREDITS.md` for the review package. The project has no selected open-source license; repository visibility alone does not grant a license.
+
+## PurrFlow automation continuation
+
+The earlier Mochi automation prototype is preserved in [PurrFlow_Studio_Automation_Source.zip](PurrFlow_Studio_Automation_Source.zip). Extract it separately. See [CONTINUATION.md](CONTINUATION.md) for current source status, test results and remaining service connections. This repository is separate from StoreWitness.
+
