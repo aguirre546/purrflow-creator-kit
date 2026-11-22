@@ -37,7 +37,9 @@ The **AI sample** tab previews a separate provided Google Flow video. It is not 
 
 ## Saving and data
 
-**Save workspace** stores the draft in this browser's local storage. JSON backup and restore provide a portable copy. Rendered videos are **not** saved in browser workspace storage or JSON backups: download the video or full ZIP before closing the tab. Clearing browser data can remove saved drafts. There is no account, cloud sync, remote database or social token collection.
+**Save workspace** stores the draft in this browser's local storage. After rendering, the app also saves that video's matching workspace automatically and keeps the latest video in IndexedDB when browser storage is available. Reloading restores the video only when its saved reference and exact story match. Editing or rebuilding the story, selecting a template, or importing a JSON backup invalidates the previous video. Caption-only and calendar edits keep the video because they do not change its frames.
+
+JSON backup and restore provide a portable draft copy; JSON backups contain no video. Download the video or full ZIP for a separate copy. If storage is full, blocked or unavailable, the app explains what could not be saved and keeps the current video available to download. Browser cleanup or eviction can remove drafts and cached videos. There is no account, cloud sync, remote database or social token collection.
 
 ## Scope and limitations
 
@@ -53,6 +55,7 @@ There is no automatic social publishing, social scheduling queue, audience analy
 | `dist/app.mjs` | UI, local persistence, preview and download actions |
 | `dist/core.mjs` | Story/copy rules, planning, validation, SRT and ZIP creation |
 | `dist/renderer.mjs` | Original canvas illustration, animation and browser recording |
+| `dist/video-cache.mjs` | IndexedDB video persistence, matching workspace references and stale-operation guards |
 | `dist/assets/` | Credited reference artwork and provided AI sample |
 | `test/` | Automated tests; browser media/UI checks are separate |
 | `serve.mjs` | Dependency-free local static server |
@@ -74,5 +77,7 @@ See `SUBMISSION_DRAFT.md`, `DEMO_SCRIPT.md` and `CREDITS.md` for the review pack
 
 ## PurrFlow automation continuation
 
-The earlier Mochi automation prototype is preserved in [PurrFlow_Studio_Automation_Source.zip](PurrFlow_Studio_Automation_Source.zip). Extract it separately. See [CONTINUATION.md](CONTINUATION.md) for current source status, test results and remaining service connections. This repository is separate from StoreWitness.
+The Mochi automation source is preserved in [PurrFlow_Studio_Automation_Source.zip](PurrFlow_Studio_Automation_Source.zip). The November 20 update adds conservative delivery recovery, corrupt-video rejection, a configuration readiness check and a private YouTube CLI with durable deduplication. Extract it separately and follow its README. Its web queue and generation/publishing services remain disconnected. The signed-in n8n Cloud trial was confirmed expired on November 20; a channel-check workflow could not run.
+
+See [CONTINUATION.md](CONTINUATION.md) and [QA_REPORT.md](QA_REPORT.md) for source/deployment verification and the remaining service gates. This repository is separate from StoreWitness; no additional competition entry is submitted.
 

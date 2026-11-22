@@ -1,32 +1,38 @@
-# Rebuild verification — November 12, 2026
+# PurrFlow verification — November 20, 2026
 
 ## Result
 
-PurrFlow Creator Kit is deployed at https://purrflow-creator-kit.studio-builder.workers.dev/ . Cloudflare reports final revision `7748cb63` Ready at 100%. This is a separate static application; the previous beta and Node automation prototype remain preserved.
+The local Creator Kit and Studio source update is verified. Publication of this specific update remains pending approval. Before the update, GitHub main was public at `5c110f2bbd5ef881874b1a4b01325670a3958571` and Cloudflare's existing Creator Kit revision `7748cb63` was Ready at 100%. The public URL returned HTTP 200. These observations do not mean the new files have already been deployed.
 
-The new competition scope is complete as a content-preparation tool. Original unattended Flow/social integration blockers were avoided through this scope change, not repaired or represented as working.
+The full unattended generation and five-platform publishing goal remains incomplete. No provider sign-in, new OAuth grant, real upload, public social post, billing change or competition submission was performed during this update.
 
-## Checks performed
+## Source checks
 
-- New build: 22 automated tests passed, zero failures/skips. Covers story validation, truthful source disclosure, distinct platform copy and conservative edited-caption limits, seven-day cadence, caption timing, CSV and ZIP structure/CRC, all illustration scenes, Unicode text bounds and visual phase transitions.
-- JavaScript syntax checked. No package installation or API credentials required.
-- Earlier preserved prototype: 31 tests passed during this session's audit. Those tests do not establish live unattended operation.
-- Browser smoke checks on localhost and live Cloudflare: initialization, preset switching, English/Taglish framing, platform tabs, saving and reload restoration, rendering, video download and ZIP export.
-- Native MP4 recording worked both locally and in production. Downloaded H.264 output measured 720 × 1280, approximately 15.1 seconds, silent. Browser timestamps/frame rate vary. Complete decode checked using FFmpeg; native-timebase frame hashing passed without errors. Forcing a coarse 30 fps null output initially produced timestamp-quantization warnings; this is why the checked native timebase is preserved and no constant-frame-rate claim is made.
-- Real browser ZIP opened successfully with Python zipfile; CRC/integrity check returned no bad entry. Includes five text captions, SRT, campaign JSON, calendar CSV, README, workspace JSON and actual MP4.
-- Calendar UI verified 21 briefs and 35 briefs across seven dates. These are editorial variations of three illustrated plots, not 21–35 different video assets.
-- Responsive check at a phone-sized viewport: document width and scroll width both 375 pixels; no horizontal overflow in the studio. Temporary viewport override reset.
-- Negative browser checks: blank X caption prevented saving; empty calendar date prevented saving. Invalid-data errors remain visible instead of silently persisting an unusable workspace.
-- Independent code review found and corrected edited-caption validation, invalid-calendar persistence and imported-source metadata issues. Added automated coverage where applicable.
-- Searched the new source package for common private-key/token patterns. None found. The app contains no live account credentials. This is a scoped check of the new project, not a security audit of all prior account/history files.
+- Creator Kit: **34 passed, 0 failed, 0 skipped**. The original 22 checks remain, with 12 video-cache lifecycle/transaction checks covering restoration, story mismatch, invalidation, delayed operations and storage failures.
+- Studio: **74 passed, 0 failed, 0 skipped** in the final isolated suite. This includes queue safeguards, HTTP save/restart/access guards, real FFmpeg caption rendering, corrupt-video rejection, exception outbox behavior, configuration checks, n8n mock guards, 23 private-uploader checks and 9 operator reconciliation checks.
+- Executed using installed Node `26.7.0` and existing FFmpeg `7.1`; source requires Node 22+. A separate execution on Node 22 was not performed. No package install is required by either app.
+- Local loopback tests required execution outside the restricted socket sandbox. Initial `EACCES` results were environment restrictions; final authorized HTTP checks passed.
+- The Studio test launcher strips live PurrFlow configuration from child processes, retaining only the configured FFmpeg path. Tests use temporary fixtures and mocked providers, with no production campaign or credentials.
 
-## Limits
+## Browser and media checks
 
-- Caption/story editing does not synthesize arbitrary visuals. Match wording to the chosen illustration.
-- The app uses local writing rules, not a live language model. Taglish changes surrounding copy, not the supplied story language.
-- Silent procedural animation; no voice generation or transcription.
-- MediaRecorder availability, codec, duration and smoothness depend on browser/foreground execution; MP4 preferred, WebM fallback.
-- Saved work stays in browser localStorage; rendered media is kept only in memory until downloaded. Workspace JSON supports portability, not automatic cloud sync.
-- No automatic Flow generation, publisher connection, social scheduling or performance optimization in this edition. Earlier social launch links are separate native-publication evidence.
-- GitHub repository publication/access remains pending user sign-in. Source ZIP is prepared, but does not replace the required repository URL.
-- Submission form remains unsubmitted, as instructed. No new charges or social posts made during the rebuild.
+- Creator Kit initialized at its loopback URL. A real browser canvas render produced an MP4 and showed `Workspace + video saved`.
+- Reload restored the matching video from IndexedDB and showed `Workspace + video restored`. The download link and `Export kit + video` action remained available.
+- Exported the restored video in a ZIP. The ZIP extracted successfully and contained five platform captions, SRT, campaign/workspace JSON, calendar CSV, README and the MP4. The checked MP4 was 2,839,473 bytes, 720 × 1280, silent, approximately 15.24 seconds and 427 decoded frames. Complete decode passed at its native timebase. A default output timebase produced timestamp-quantization warnings; native-timebase decoding removed those warnings. Constant frame rate is not claimed.
+- Editing the story immediately removed the old video/download and disabled exports until rebuild. Reloading after that edit did not resurrect the invalidated video.
+- A separate Studio UI fixture was clearly labeled `QA fixture only`. Its review form rejected an empty no-send acknowledgment, then accepted the exact phrase, paused the fixture and displayed that provider API verification had not occurred. All provider endpoints were absent. No real post was sent.
+- Browser screenshots are saved alongside the release files. The source was tested locally; the old public site was not changed.
+
+## Live account checks and limits
+
+- GitHub browser session was signed in as the repository owner. Command-line Git authentication was unavailable, so a browser upload is prepared.
+- The signed-in n8n Cloud instance displayed `Your trial is over`. One attempt to execute the existing read-only YouTube channel workflow returned `Your trial has ended`. Google access, quota and channel identity were not freshly established.
+- Cloudflare showed the existing static Creator Kit deployment Ready at revision `7748cb63`. Automatic approval review rejected staging the new deployment ZIP without explicit approval for this payload and production destination. No update was uploaded or deployed.
+- Connected Runway reported no available video models. Google Omni API generation is a paid-tier capability; existing usable API credits/entitlements remain unverified. No generation was requested.
+- Meta permissions and native publishers, X existing credits/access, an eligible TikTok integration, secure persistent processing, a real alert recipient and overnight/seven-day endurance remain open.
+
+## Source packaging
+
+The automation source ZIP excludes runtime campaigns, `.runtime` journals, locks, media uploads, environment secrets and Git metadata. Public n8n references remain `SELECT_YOUR_YOUTUBE_CREDENTIAL`. The separate private uploader stores no access token; its private runtime journal must be preserved locally and excluded from future source archives.
+
+The full source package and a smaller GitHub update package are prepared with file manifests. A source ZIP or local test pass does not establish live provider access or deployment success.

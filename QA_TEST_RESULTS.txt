@@ -1,30 +1,24 @@
-✔ three presets each produce five distinct disclosed captions and 15-second cues (2.5522ms)
-✔ AI sample disclosure is explicit opt-in and invalid source is rejected (0.5963ms)
-✔ input boundaries handle Unicode codepoints, reject empty, unsupported choices and excessive length (1.3378ms)
-✔ all tones/languages and maximum Unicode inputs keep X comfortably below its local cap (1.8499ms)
-✔ week plan has exact seven-day 3/4/5 cadence, deterministic unique ideas and explicit planned status (6.1546ms)
-✔ calendar validation rejects normalized impossible dates and bad daily count (0.3465ms)
-✔ SRT formatting and millisecond timing reject invalid overlaps and collapsed cues (0.6501ms)
-✔ bundle contains five captions, subtitle, campaign and CSV with correct escaping (1.5581ms)
-✔ edited platform captions reject blanks, missing entries, controls and oversized X including emoji (1.2397ms)
-✔ edited platform captions allow exact conservative boundaries and line breaks (1.6952ms)
-✔ ZIP uses valid stored records, UTF8, CRC32, central offsets and EOCD bounds (1.0098ms)
-✔ ZIP rejects traversal, absolute filenames and invalid payloads (0.5592ms)
-✔ box: all scenes draw with valid Canvas arguments (9.4524ms)
-✔ shelf: all scenes draw with valid Canvas arguments (3.1706ms)
-✔ chef: all scenes draw with valid Canvas arguments (3.7519ms)
-✔ bed-box: all scenes draw with valid Canvas arguments (2.6588ms)
-✔ forbidden-shelf: all scenes draw with valid Canvas arguments (3.4015ms)
-✔ tiny-chef: all scenes draw with valid Canvas arguments (1.6673ms)
-✔ Long Unicode titles and caption tokens stay within upper text bounds (9.9727ms)
-✔ Caption cue switches at its declared boundary (4.1672ms)
-✔ Visual story reaches setup at 3 seconds and payoff at 7 seconds (3.1804ms)
-✔ Unsupported runtime reports no recording instead of promising an export (1.6694ms)
-ℹ tests 22
-ℹ suites 0
-ℹ pass 22
-ℹ fail 0
-ℹ cancelled 0
-ℹ skipped 0
-ℹ todo 0
-ℹ duration_ms 254.8128
+PurrFlow test summary — November 20, 2026
+This is a verification summary, not a raw console transcript.
+
+Creator Kit: node --test
+34 tests; 34 passed; 0 failed; 0 skipped.
+Includes 12 new video-cache lifecycle and IndexedDB transaction checks.
+
+Studio: npm test (isolated run-tests.mjs launcher)
+74 tests; 74 passed; 0 failed; 0 skipped.
+Includes real FFmpeg and loopback HTTP tests, 23 private-uploader checks,
+9 operator reconciliation checks, readiness checks and preserved n8n mock tests.
+
+Runtime: Node 26.7.0; FFmpeg 7.1. Node 22 is the declared minimum, not a
+separately executed environment in this update.
+
+Initial restricted loopback runs returned EACCES. Final authorized local
+runs passed; this is not a provider/quota failure.
+
+Browser: render + video autosave, matching reload restore, ZIP export with
+restored MP4, stale-video invalidation, and isolated held-job UI controls passed.
+The exported MP4 fully decoded using its native timebase.
+
+No live OAuth credential, private upload, public publishing or endurance test
+has passed in this update. The n8n trial blocked the read-only channel workflow.
